@@ -9,6 +9,11 @@ const Theme = Object.freeze({
 		LARGE: '28px',
 		MED: '20px',
 		SMALL: '14px'
+	},
+	RADIUS: {
+		SMALL: '4px',
+		MED: '6px',
+		LARGE: '8px'
 	}
 });
 

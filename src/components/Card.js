@@ -14,7 +14,7 @@ const CardContent = styled.div`
 	padding: ${Theme.MARGIN.MED};
 	margin-bottom: ${Theme.MARGIN.MED};
 	background-color: #ddd;
-	border-radius: 6px;
+	border-radius: ${Theme.RADIUS.MED};
 `;
 
 const Card = (props) => {
