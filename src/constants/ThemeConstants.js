@@ -1,5 +1,6 @@
 const Theme = Object.freeze({
 	MARGIN: {
+		XSMALL: '6px',
 		SMALL: '8px',
 		MED: '12px',
 		LARGE: '16px'

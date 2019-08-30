@@ -6,7 +6,7 @@ import { Theme } from '../constants/ThemeConstants';
 const SearchContainer = styled.div`
 	width: 100%;
 	display: flex;
-	align-content: center;
+	justify-content: center;
 `;
 
 const Input = styled.input`
