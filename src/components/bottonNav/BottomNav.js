@@ -22,10 +22,13 @@ const BottomNav = () => {
 		setState({ currentView: title });
 	};
 
-	const bottomBarItems = [{
-		title: Views.SEARCH,
-		icon: <SearchIcon />
-	}];
+	const bottomBarItems = [
+		{
+			title: Views.SEARCH,
+			icon: <SearchIcon />,
+			showTitle: false
+		}
+	];
 	return (
 		<NavContainer>
 			{ bottomBarItems.map((item) => (

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { Theme } from '../../constants/ThemeConstants';
 import forwardProps from '../../utils/forwardProps';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const textScaleUp = keyframes`
 	from { transform: scale(1); }
@@ -43,8 +44,8 @@ const Title = styled.div`
 	animation: ${props => props.selected === '' ? textScaleDown : textScaleUp} 0.5s forwards;
 `;
 
-const Test = styled.div`
-	animation: ${props => props.selected === '' ? iconScaleDown : iconScaleUp} 0.5s forwards;
+const Icon = styled.div`
+	animation: ${props => props.selected ? iconScaleUp : iconScaleDown} 0.5s forwards;
 `;
 
 const BottomNavItem = (props) => {
@@ -57,14 +58,17 @@ const BottomNavItem = (props) => {
 		showIcon
 	} = props;
 
+	const [theme] = useContext(ThemeContext);
+
 	const iconStyles = {
-		selected: isSelected
+		selected: isSelected,
+		selectedColour: 'primary'
 	};
 
 	return (
 		<ItemContainer isSelected={isSelected} onClick={() => onClick(title)}>
-			{ showIcon && icon ? <Test selected={isSelected ? 'red' : ''}>{forwardProps(icon, iconStyles)}</Test> : null }
-			{ showTitle ? <Title selected={isSelected ? 'red' : ''}>{title}</Title> : null }
+			{ showIcon && icon ? <Icon selected={!!isSelected}>{forwardProps(icon, iconStyles)}</Icon> : null }
+			{ showTitle ? <Title selected={isSelected ? theme.primary.text : ''}>{title}</Title> : null }
 		</ItemContainer>
 	);
 };
