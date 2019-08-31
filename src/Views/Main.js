@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ViewContext, Views } from '../context/ViewContext';
 import SearchView from './SearchView';
+import BottomNav from '../components/bottonNav/BottomNav';
 
 const Main = (props) => {
 	const [viewState, setState] = useContext(ViewContext);
@@ -17,6 +18,7 @@ const Main = (props) => {
 	return (
 		<div>
 			{ content }
+			<BottomNav />
 		</div>
 	);
 }
