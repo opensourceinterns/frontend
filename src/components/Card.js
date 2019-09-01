@@ -7,21 +7,21 @@ const CardContainer = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	margin-bottom: ${Theme.MARGIN.MED};
 `;
 
 const CardContent = styled.div`
 	width: 90%;
 	padding: ${Theme.MARGIN.MED};
-	margin-bottom: ${Theme.MARGIN.MED};
 	background-color: #ddd;
-	border-radius: ${Theme.RADIUS.MED};
+	border-radius: ${Theme.RADIUS.SMALL};
 `;
 
 const Card = (props) => {
-	const { children } = props;
+	const { children, className } = props;
 
 	return (
-		<CardContainer>
+		<CardContainer className={className}>
 			<CardContent>
 				{ children }
 			</CardContent>
@@ -30,7 +30,8 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-	children: PropTypes.node
+	children: PropTypes.node,
+	className: PropTypes.string
 };
 
 export default Card;
